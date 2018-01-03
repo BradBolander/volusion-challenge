@@ -9,7 +9,7 @@ var App = React.createClass({
     render: function() {
       return (
         <div id="app">
-           <h1 className="site-header">Metorite Landing Locations</h1>
+           <h1 className="site-header">Meteorite Landing Locations</h1>
         </div>
       );
     }
