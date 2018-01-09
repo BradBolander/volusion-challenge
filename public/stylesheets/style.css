@@ -9,6 +9,9 @@ a {
 
 #map {
   height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  max-height: 650px;
 }
 
 html, body {
@@ -21,4 +24,31 @@ html, body {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.mass-item {
+  color: black;
+  font-size: 16px;
+  display: block;
+  border: thin solid black;
+  padding-top: 10px;
+  text-align: center;
+  float: left;
+  padding-bottom: 10px;
+}
+
+.mass-item-title {
+  font-weight: bold;
+}
+
+#mass-list {
+  display: block;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.about-wrapper {
+  font-style: italic;
+  text-align: center;
+  margin: 15px;
 }
