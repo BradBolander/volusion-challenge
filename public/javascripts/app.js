@@ -8,19 +8,15 @@ var App = React.createClass({
       };
   },
 
-  setData: function(newData) {
-    this.setState({
-      meteoriteData: newData
-    })
-  },
-
   componentDidMount: function() {
     $.ajax({
       method: "GET",
       url: "https://data.nasa.gov/resource/gh4g-9sfh.json",
       dataType: "json",
       success: function(data) {
-        this.setData(data);
+        this.setState({
+          meteoriteData: data
+        })
       }.bind(this)
     });
   },
@@ -73,26 +69,27 @@ var MassDisplay = React.createClass({
 
   render: function() {
     if (!!this.props.data) {
-      let result = this.props.data.sort(function(a,b) {
+      let sortedByMass = this.props.data.sort(function(a,b) {
         return b.mass - a.mass;
       });
 
       var meteoriteMass = [];
-      for(let i = 0; i < 50; i++) {
+      for(let i = 0; i < 10; i++) {
         meteoriteMass.push(
-          <div key={i} className="mass-item col-xs-6 col-sm-6 col-md-3 col-lg-3">
-            <span className="mass-item-title">{result[i].name} - {result[i].year.substring(0,4)}</span><br/>
-            <span className="mass-item-weight">Mass: {result[i].mass}g</span><br/>
+          <div key={i} className="mass-item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+            <div className="index-display">{i+1}</div>
+            <span className="mass-item-title">{sortedByMass[i].name} - {sortedByMass[i].year.substring(0,4)}</span><br/>
+            <span className="mass-item-weight">Mass: {sortedByMass[i].mass}g</span><br/>
           </div>
         )
       }
     }
 
     return (
-      <div id="mass-list">
-        <h1>Top 50 Largest Meteorites</h1>
+      <section id="mass-list">
+        <h1 className="mass-list-title">Top 10 Largest Meteorites</h1>
         {meteoriteMass}
-      </div>
+      </section>
     );
   }
 })

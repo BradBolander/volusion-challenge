@@ -30,10 +30,10 @@ html, body {
   color: black;
   font-size: 16px;
   display: block;
-  border: thin solid black;
   padding-top: 10px;
-  text-align: center;
+  text-align: left;
   float: left;
+  margin-bottom: 3px;
   padding-bottom: 10px;
 }
 
@@ -47,8 +47,29 @@ html, body {
   margin-right: 100px;
 }
 
+.mass-list-title {
+  border-bottom: thin solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
 .about-wrapper {
   font-style: italic;
   text-align: center;
   margin: 15px;
 }
+
+.index-display {
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: thin solid black;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
